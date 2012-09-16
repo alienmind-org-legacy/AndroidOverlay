@@ -1,0 +1,11 @@
+REPSDCARD=extSdCard
+echo "# This program will generate a list of adb push into sdcard"
+echo "# This won't copy anything per se"
+echo "# Please review this output and pipe it through | sh if you are satisfied"
+for i in `find  sdcard/overlay/ -type f ` ; do
+  DST=`echo $i | sed "s/sdcard/$REPSDCARD/g"`
+  echo adb shell mkdir -p `dirname $DST`
+  echo adb push $i $DST
+done
+echo adb push overlay.zip $REPSDCARD/
+echo adb push overlay-signed.zip $REPSDCARD/

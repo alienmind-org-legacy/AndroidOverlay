@@ -1,0 +1,7 @@
+DST=overlay.zip
+SGN=overlay-signed.zip
+rm -f $DST $SGN
+#zip -r9 ../overlay.zip META-INF system
+~/android/tools/7za a -tzip $DST META-INF system -mx9
+~/android/tools/sign.sh $DST $SGN
+

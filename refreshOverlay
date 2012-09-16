@@ -1,0 +1,8 @@
+REPSDCARD=extSdCard
+echo "# This program will generate a list of adb pull from the device to local"
+echo "# This won't copy anything per se"
+echo "# Please review this output and pipe it through | sh if you are satisfied"
+for i in `find  sdcard/overlay/ -type f ` ; do
+  SRC=`echo $i | sed "s/sdcard\/overlay//g"`
+  echo adb pull $SRC $i
+done
