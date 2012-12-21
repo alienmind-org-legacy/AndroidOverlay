@@ -12,12 +12,16 @@
 # This is extracted from icetool overlay option,
 # available on https://github.com/alienmind-org/BlackICE/blob/master/system/bin/icetool
 #
-OVERLAY_DIR=/extSdCard/overlay
+OVERLAY_DIR=/storage/emulated/0/overlay
 
-# FIXME Device dependent paths
+# Device dependent paths
 # These works only on DesireHD / Inspire4G
-SYSTEM_DEV=/dev/block/mmcblk0p25
-DATA_DEV=/dev/block/mmcblk0p26
+#SYSTEM_DEV=/dev/block/mmcblk0p25
+#DATA_DEV=/dev/block/mmcblk0p26
+
+# Nexus 4
+SYSTEM_DEV=/dev/block/platform/msm_sdcc.1/by-name/system
+DATA_DEV=/dev/block/platform/msm_sdcc.1/by-name/userdata
 
 ###
 #
