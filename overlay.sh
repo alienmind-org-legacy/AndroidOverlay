@@ -16,15 +16,6 @@
 # Device dependent paths
 # OVERLAY_DIR is the directory (when in RECOVERY) where the files will be copied from
 
-# DesireHD / Inspire4G
-#SYSTEM_DEV=/dev/block/mmcblk0p25
-#DATA_DEV=/dev/block/mmcblk0p26
-#OVERLAY_DIR=/sdcard
-
-# Nexus 4
-SYSTEM_DEV=/dev/block/platform/msm_sdcc.1/by-name/system
-DATA_DEV=/dev/block/platform/msm_sdcc.1/by-name/userdata
-OVERLAY_DIR=/data/media/0/overlay 
 
 ###
 #
@@ -34,9 +25,9 @@ Overlay() {
   local SRC="$2"
 
   if [ "$DST" = "/system" ]; then
-    DEV=/dev/block/mmcblk0p25
+    DEV=$SYSTEM_DEV
   elif [ "$DST" = "/data" ]; then
-    DEV=/dev/block/mmcblk0p26
+    DEV=$DATA_DEV
   else
     die "overlay: Invalid destination $DST"
   fi
