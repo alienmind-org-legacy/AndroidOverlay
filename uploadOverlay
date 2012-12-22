@@ -1,4 +1,4 @@
-REPSDCARD=extSdCard
+REPSDCARD=sdcard
 echo "# This program will generate a list of adb push into sdcard"
 echo "# This won't copy anything per se"
 echo "# Please review this output and pipe it through | sh if you are satisfied"

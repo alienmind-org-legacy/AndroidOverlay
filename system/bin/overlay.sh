@@ -12,16 +12,19 @@
 # This is extracted from icetool overlay option,
 # available on https://github.com/alienmind-org/BlackICE/blob/master/system/bin/icetool
 #
-OVERLAY_DIR=/storage/emulated/0/overlay
 
 # Device dependent paths
-# These works only on DesireHD / Inspire4G
+# OVERLAY_DIR is the directory (when in RECOVERY) where the files will be copied from
+
+# DesireHD / Inspire4G
 #SYSTEM_DEV=/dev/block/mmcblk0p25
 #DATA_DEV=/dev/block/mmcblk0p26
+#OVERLAY_DIR=/sdcard
 
 # Nexus 4
 SYSTEM_DEV=/dev/block/platform/msm_sdcc.1/by-name/system
 DATA_DEV=/dev/block/platform/msm_sdcc.1/by-name/userdata
+OVERLAY_DIR=/data/media/0/overlay 
 
 ###
 #
