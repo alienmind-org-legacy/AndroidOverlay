@@ -1,4 +1,5 @@
 #!/system/bin/sh
+set -x
 #
 # overlay script - by AlienMind
 # 
@@ -16,6 +17,10 @@
 # Device dependent paths
 # OVERLAY_DIR is the directory (when in RECOVERY) where the files will be copied from
 
+#SYSTEM_DEV=`mount | awk '($2 == "/system") { print $1 }'`
+#DATA_DEV=`mount | awk '($2 == "/data") { print $1 }'`
+#OVERLAY_DIR=/sdcard/
+. /system/etc/overlay_device.conf
 
 ###
 #
